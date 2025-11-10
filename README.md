@@ -1,12 +1,25 @@
-# Predicting Gamer Behaviour: Machine Learning Classification
+# 🎮 Predicting Gamer Behaviour: Machine Learning Classification
 
-A machine learning project that predicts player behaviour patterns and classifies players into engagement cohorts using gaming activity data.
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.14.0-blue?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikit-learn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
+![License](https://img.shields.io/badge/License-Portfolio-green)
+
+**A machine learning project that predicts player behaviour patterns and classifies players into engagement cohorts using gaming activity data.**
+
+[Features](#-dataset-features) • [Getting Started](#-getting-started) • [Methodology](#-methodology) • [Results](#-model-performance) • [Contact](#-contact)
+
+</div>
+
+---
 
 ## 📋 Project Overview
 
 This project analyses online gaming behaviour data to predict player engagement levels, categorising players into two distinct cohorts (0 or 1) based on their gaming patterns and activities. The analysis employs multiple machine learning algorithms to identify the most effective predictive model.
 
-**Note:** This dataset is fully AI-generated for demonstration purposes only.
+> **Note:** This dataset is fully AI-generated for demonstration purposes only.
 
 ## 🎯 Objective
 
@@ -31,18 +44,27 @@ Classify players into binary engagement cohorts by analysing behavioural metrics
 
 ## 📊 Dataset Features
 
-The dataset contains 30,000 player records with 24 features including:
+The dataset contains **30,000 player records** with **24 features** including:
 
-- `sessions_per_week` - Average gaming sessions per week
-- `avg_session_minutes` - Average session duration
-- `total_playtime_hours` - Cumulative playtime
-- `achievements_unlocked` - Number of achievements earned
-- `xp_earned` - Experience points accumulated
-- `player_level` - Current player level
-- `purchases_made` - In-game purchases count
-- `friends_count` - Social connections
-- `engagement_score` - Calculated engagement metric
-- `label` - Target variable (0 or 1)
+| Feature | Description |
+|---------|-------------|
+| `sessions_per_week` | Average gaming sessions per week |
+| `avg_session_minutes` | Average session duration |
+| `total_playtime_hours` | Cumulative playtime |
+| `achievements_unlocked` | Number of achievements earned |
+| `xp_earned` | Experience points accumulated |
+| `player_level` | Current player level |
+| `purchases_made` | In-game purchases count |
+| `friends_count` | Social connections |
+| `engagement_score` | Calculated engagement metric |
+| `label` | Target variable (0 or 1) |
+
+<details>
+<summary><b>View Full Feature List (24 features)</b></summary>
+
+Additional features include: `hours_per_session`, `total_weeks_active`, `total_activity_minutes`, `quests_completed`, `items_crafted`, `chat_messages`, `days_since_last_login`, `toxicity_reports`, `clan_participation_rate`, `monetisation_score`, and engineered noise features.
+
+</details>
 
 ## 🚀 Getting Started
 
@@ -72,34 +94,44 @@ jupyter notebook predicting_player_behaviour.ipynb
 
 ## 📈 Methodology
 
+```mermaid
+graph LR
+    A[📥 Load Data] --> B[🔍 EDA]
+    B --> C[⚙️ Preprocessing]
+    C --> D[🤖 Train Models]
+    D --> E[📊 Evaluate]
+    E --> F[🎯 Select Best]
+    F --> G[💾 Deploy]
+```
+
 ### 1. Exploratory Data Analysis (EDA)
-- Feature distribution analysis comparing cohorts
-- Class balance assessment
-- Correlation analysis between features
+- 📊 Feature distribution analysis comparing cohorts
+- ⚖️ Class balance assessment
+- 🔗 Correlation analysis between features
 
 ### 2. Data Preprocessing
-- Feature engineering and selection
-- Automatic categorical encoding (if applicable)
-- Stratified train-test split (80/20) to handle class imbalance
-- Feature standardisation using StandardScaler
+- 🔧 Feature engineering and selection
+- 🏷️ Automatic categorical encoding (if applicable)
+- ✂️ Stratified train-test split (80/20) to handle class imbalance
+- 📏 Feature standardisation using StandardScaler
 
 ### 3. Model Training & Evaluation
-- Four classification algorithms trained and compared
-- 5-fold cross-validation with stratification
-- Performance metrics: Accuracy, ROC AUC Score
-- Training time tracking for efficiency assessment
+- 🤖 Four classification algorithms trained and compared
+- 🔄 5-fold cross-validation with stratification
+- 📈 Performance metrics: Accuracy, ROC AUC Score
+- ⏱️ Training time tracking for efficiency assessment
 
 ### 4. Model Analysis
-- ROC curve comparison across all models
-- Feature importance analysis
-- Confusion matrix visualisation
-- Probability distribution analysis
-- Threshold optimisation
-- Hyperparameter tuning with GridSearchCV
+- 📉 ROC curve comparison across all models
+- 🎯 Feature importance analysis
+- 🎨 Confusion matrix visualisation
+- 📊 Probability distribution analysis
+- 🎚️ Threshold optimisation
+- 🔧 Hyperparameter tuning with GridSearchCV
 
 ### 5. Predictions
-- Custom prediction function for new player data
-- Probability scores for classification confidence
+- 🔮 Custom prediction function for new player data
+- 📊 Probability scores for classification confidence
 
 ## 📊 Key Features
 
@@ -153,16 +185,28 @@ scaler = joblib.load('scaler.pkl')
 
 ## 📝 Project Structure
 
-```
+```plaintext
 predicting-gamer-behaviour/
 │
-├── predicting_player_behaviour.ipynb  # Main analysis notebook
-├── online_gaming_behavior_dataset.csv # Dataset (AI-generated)
-├── requirements.txt                    # Python dependencies
-├── README.md                           # Project documentation
-├── best_model.pkl                      # Saved best model (after training)
-└── scaler.pkl                          # Saved feature scaler (after training)
+├── 📓 predicting_player_behaviour.ipynb  # Main analysis notebook
+├── 📊 online_gaming_behavior_dataset.csv # Dataset (AI-generated)
+├── 📋 requirements.txt                    # Python dependencies
+├── 📖 README.md                           # Project documentation
+├── 🤖 best_model.pkl                      # Saved best model (after training)
+└── ⚙️ scaler.pkl                          # Saved feature scaler (after training)
 ```
+
+## 🎯 Key Results
+
+| Metric | Best Model Performance |
+|--------|----------------------|
+| **Algorithm** | Gradient Boosting |
+| **ROC AUC Score** | ~0.77 |
+| **Accuracy** | ~75% |
+| **Cross-Validation** | Stable across 5 folds |
+| **Training Time** | < 1 second |
+
+The model successfully identifies behavioural patterns despite intentional class imbalance and noise, demonstrating robust performance on realistic gaming analytics scenarios.
 
 ## 🤝 Contributing
 
@@ -170,8 +214,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
 
-**Project Owner:** Lanthanum89  |   Laura Norwood
-**Repository:** [ML-predicting-gamer-behaviour](https://github.com/Lanthanum89/ML-predicting-gamer-behaviour)
+<div align="center">
+
+**Project Owner:** Lanthanum89 | Laura Norwood
+
+[![GitHub](https://img.shields.io/badge/GitHub-Lanthanum89-181717?logo=github)](https://github.com/Lanthanum89)
+[![Repository](https://img.shields.io/badge/Repo-ML--predicting--gamer--behaviour-blue?logo=github)](https://github.com/Lanthanum89/ML-predicting-gamer-behaviour)
+
+</div>
 
 ## 📄 License
 
@@ -179,4 +229,11 @@ This project is available for educational and portfolio purposes.
 
 ---
 
-**Built with 🎮 for data science and gaming analytics**
+<div align="center">
+
+### Built with 🎮 for data science and gaming analytics
+
+![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
+![Love](https://img.shields.io/badge/Made%20with-❤️-red)
+
+</div>
